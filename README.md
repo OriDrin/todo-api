@@ -11,13 +11,14 @@ This is my first backend project.
 
 ## Endpoints
 
-| Method | Path         | Description        | Success | Errors                 |
-| ------ | ------------ | ------------------ | ------- | ---------------------- |
-| GET    | `/todos`     | Get all todos      | 200     | –                      |
-| POST   | `/todos`     | Create a new todo  | 201     | 400 if `title` missing |
-| GET    | `/todos/:id` | Get one todo by id | 200     | 404 if not found       |
-| PUT    | `/todos/:id` | Update a todo      | 200     | 404 if not found       |
-| DELETE | `/todos/:id` | Delete a todo      | 204     | 404 if not found       |
+| Method | Path               | Description                                      | Success | Errors                 |
+| ------ | ------------------ | ------------------------------------------------ | ------- | ---------------------- |
+| GET    | `/todos`           | Get all todos                                    | 200     | –                      |
+| GET    | `/todos?done=true` | Get only completed todos (`false` for open ones) | 200     | –                      |
+| POST   | `/todos`           | Create a new todo                                | 201     | 400 if `title` missing |
+| GET    | `/todos/:id`       | Get one todo by id                               | 200     | 404 if not found       |
+| PUT    | `/todos/:id`       | Update a todo                                    | 200     | 404 if not found       |
+| DELETE | `/todos/:id`       | Delete a todo                                    | 204     | 404 if not found       |
 
 ### Example
 
@@ -47,7 +48,7 @@ The server runs on `http://localhost:3000`.
 
 ## Testing
 
-The API is tested with a Postman collection: 8 requests and 15 automated tests,
+The API is tested with a Postman collection: 9 requests and 17 automated tests,
 covering both successful requests and error cases (400 and 404).
 The tests clean up after themselves, so the collection can be run repeatedly.
 
@@ -57,7 +58,7 @@ Data is stored in memory, so it resets every time the server restarts.
 
 ## Screenshots
 
-### Automated tests – 15/15 passing
+### Automated tests
 
 ![Postman collection run: 15 tests passed, 0 failed](screenshots/postman-run.png)
 

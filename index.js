@@ -15,6 +15,11 @@ app.get("/", (req, res) => {
 });
 
 app.get("/todos", (req, res) => {
+  if (req.query.done !== undefined) {
+    const done = req.query.done === "true";
+    const filtered = todos.filter((t) => t.done === done);
+    return res.json(filtered);
+  }
   res.json(todos);
 });
 
