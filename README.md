@@ -54,3 +54,13 @@ The tests clean up after themselves, so the collection can be run repeatedly.
 ## Notes
 
 Data is stored in memory, so it resets every time the server restarts.
+
+## Screenshots
+
+### Automated tests – 15/15 passing
+
+![Postman collection run: 15 tests passed, 0 failed](screenshots/postman-run.png)
+
+### Creating a todo
+
+![POST /todos request and 201 Created response](screenshots/create-todo.png)
